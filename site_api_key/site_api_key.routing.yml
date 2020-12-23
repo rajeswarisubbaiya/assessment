@@ -1,5 +1,5 @@
 site_api_key.page_node_to_json:
-  path: '/page_json/{key}/{nid}'
+  path: '/page_json/{apikey}/{nid}'
   defaults:
     _controller: '\Drupal\site_api_key\Controller\PageNodeToJson::content'
   options:
