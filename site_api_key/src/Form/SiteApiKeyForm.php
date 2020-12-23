@@ -29,31 +29,31 @@ class SiteApiKeyForm extends SiteInformationForm {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildform($form, $form_state);
+  // public function buildForm(array $form, FormStateInterface $form_state) {
+  //   $form = parent::buildform($form, $form_state);
 
-    // Load the Site Information configuration and extract Site API Key from it.
-    $config = $this->config('system.site');
-    $key = $config->get('siteapikey');
+  //   // Load the Site Information configuration and extract Site API Key from it.
+  //   $config = $this->config('system.site');
+  //   $apikey = $config->get('siteapikey');
 
-    // Set a default value if Key is not set.
-    if (empty($key)) {
-      $key = 'No API Key yet';
-    }
-    // Create textfield for storing Site API Key.
-    $form['site_information']['siteapikey'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Site API Key'),
-      '#description' => $this->t('The private key to access JSON representation of page nodes.'),
-      '#default_value' => $key,
-    ];
+  //   // Set a default value if Key is not set.
+  //   if (empty($apikey)) {
+  //     $apikey = 'No API Key yet';
+  //   }
+  //   // Create textfield for storing Site API Key.
+  //   $form['site_information']['siteapikey'] = [
+  //     '#type' => 'textfield',
+  //     '#title' => $this->t('Site API Key'),
+  //     '#description' => $this->t('The private key to access JSON representation of page nodes.'),
+  //     '#default_value' => $apikey,
+  //   ];
 
-    // Change the submit button title.
-    $form['actions']['submit']['#value'] = $this->t('Update Configuration');
+  //   // Change the submit button title.
+  //   $form['actions']['submit']['#value'] = $this->t('Update Configuration');
 
-    // Return the altered form.
-    return $form;
-  }
+  //   // Return the altered form.
+  //   return $form;
+  // }
 
   /**
    * {@inheritdoc}

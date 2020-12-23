@@ -1,4 +1,6 @@
 <?php
+use Drupal\Core\Routing\RouteMatchInterface;
+
 /**
  * Implements hook_form_alter().
  */
@@ -10,6 +12,7 @@ function site_api_key_form_system_site_information_settings_alter(&$form, $form_
     $form['site_information']['site_api_key'] = array(
         '#type' => 'textfield',
         '#title' => t('Site API Key'),
+        '#description' => ('The private key to access JSON representation of page nodes.'),
         '#default_value' => $modulename,
     );
     // Change form submit button text to 'Update Configuration'
