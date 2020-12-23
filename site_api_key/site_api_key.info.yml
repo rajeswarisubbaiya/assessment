@@ -1,0 +1,5 @@
+name: 'Site Api Key'
+type: module
+description: 'Adding extra site api field to the basic site information'
+core: 8.x
+package: 'Custom'

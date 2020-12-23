@@ -1,0 +1,12 @@
+site_api_key.page_node_to_json:
+  path: '/page_json/{key}/{nid}'
+  defaults:
+    _controller: '\Drupal\site_api_key\Controller\PageNodeToJson::content'
+  options:
+    parameters:
+      key:
+        type: config
+      nid:
+        type: entity:node
+  requirements:
+    _permission: 'access content'
