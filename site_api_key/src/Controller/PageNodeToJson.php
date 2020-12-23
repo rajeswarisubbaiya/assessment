@@ -9,10 +9,9 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides json responses for content type page.
+ * Gives json format for content type page.
  */
 class PageNodeToJson extends ControllerBase {
-
   /**
    * The configuration factory.
    *
@@ -55,25 +54,20 @@ class PageNodeToJson extends ControllerBase {
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    *   The Node JSON.
    */
-  public function content($key, $nid) {
-    // Fetch the site api key from configuration object.
+  public function content($apikey, $nid) {
     $site_api_key = $this->configFactory->getEditable('system.site')->get('siteapikey');
-
-    // If key and node exist then return JSON output.
-    if (!empty($key) && !empty($nid)) {
-      // If key in url is same as Site API Key and Node object is page, Then
-      // return the Node JSON. Else deny the access.
-      if ($site_api_key == $key && $nid->bundle() == 'page') {
+    // checking the condition whether key value and the node is present
+    if (!empty($apikey) && !empty($nid)) {
+      if ($site_api_key == $apikey && $nid->bundle() == 'page') {
         return new JsonResponse($nid->toArray(), 200);
       }
       else {
         throw new AccessDeniedHttpException();
       }
     }
-    // Otherwise show Access Denied.
+    // else shows access denied.
     else {
       throw new AccessDeniedHttpException();
     }
   }
-
 }
