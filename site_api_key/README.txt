@@ -50,5 +50,12 @@ RESOURCES USED
  * https://drupal.stackexchange.com/questions/156703/how-can-i-add-a-textbox-in-site-information-configuration
  * https://www.drupal.org/docs/8/api/routing-system/parameters-in-routes/using-parameters-in-routes
  * https://www.drupal.org/docs/drupal-apis/routing-system/structure-of-routes
+
+TIME REQUIRED
+-------------
+
+ * Took me around 10 hours.
+
+
  
 
